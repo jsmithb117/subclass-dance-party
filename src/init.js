@@ -3,7 +3,10 @@ $(document).ready(function() {
 
   $('.addDancerButton').on('click', function(event) {
     var dancerMakerFunctionName = $(this).data('dancerMakerFunctionName');
+    console.log(dancerMakerFunctionName);
     var dancerMakerFunction = window[dancerMakerFunctionName];
+    console.log (window[dancerMakerFunctionName])
+
     var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
