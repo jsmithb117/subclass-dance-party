@@ -1,6 +1,6 @@
 //Rick will shrink and grow
 var MakeRickDancer = function(top, left, timeBetweenSteps) {
-  this.$node = $('<img src="./transparentRick.png"/>');
+  this.$node = $('<img class="rickdancer" src="images/transparentRick.png">');
   MakeDancer.call(this, top, left, timeBetweenSteps, this.$node);
 };
 

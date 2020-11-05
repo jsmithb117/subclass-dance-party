@@ -1,7 +1,7 @@
 //Morty will flip on the horizontal axis then flip back
 var MakeMortyDancer = function(top, left, timeBetweenSteps) {
-  this.node = $('<span class="mortydancer"></span>');
-  MakeDancer.call(this, top, left, timeBetweenSteps, this.node);
+  this.$node = $('<img class="mortydancer" src="images/morty.png">');
+  MakeDancer.call(this, top, left, timeBetweenSteps, this.$node);
 };
 
 MakeMortyDancer.prototype = Object.create(MakeDancer.prototype);

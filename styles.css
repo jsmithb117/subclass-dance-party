@@ -30,3 +30,40 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+.mortydancer{
+  width: 70px;
+  position:absolute;
+  animation: mortyDancing 2s infinite;
+}
+
+@keyframes mortyDancing {
+  0% {-webkit-transform: scaleX(1);}
+  50% {-webkit-transform: scaleX(-1);}
+  100% {-webkit-transform: scaleX(1);}
+}
+
+.rickdancer{
+  width: 70px;
+  position:absolute;
+  animation-name: rickDancing;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rickDancing {
+  0% {width: 70px;}
+  25% {width: 140px;}
+  50% {width: 220px;}
+  75% {width: 120px;}
+  100% {width: 70px;}
+}
+
+
+/* <style>
+img {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+</style>
+
+<img src="paris.jpg" alt="Paris">  */
