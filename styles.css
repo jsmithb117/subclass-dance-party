@@ -57,13 +57,3 @@ body, a:link, a:visited, a:active{
   75% {width: 120px;}
   100% {width: 70px;}
 }
-
-
-/* <style>
-img {
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-}
-</style>
-
-<img src="paris.jpg" alt="Paris">  */
