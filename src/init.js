@@ -11,16 +11,13 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     $('body').append(dancer.$node[0]);
-    console.log (dancer.$node[0].style.top)
     window.dancers.push(dancer.$node[0]);
   });
 
   $('.lineUp').click(function() {
     for (var i = 0; i < window.dancers.length; i++) {
-      console.log (window.dancers[i].style.top)
       originalTops.push(window.dancers[i].style.top);
       window.dancers[i].style.top = '50%';
-      console.log (window.dancers[i].style.top)
 
     }
   });
