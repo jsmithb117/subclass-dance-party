@@ -53,8 +53,36 @@ body, a:link, a:visited, a:active{
 
 @keyframes rickDancing {
   0% {width: 70px;}
-  /* 25% {width: 140px;} */
   50% {width: 220px;}
-  /* 75% {width: 120px;} */
   100% {width: 70px;}
+}
+
+/* ['wicked', 'weird', 'wild', 'funny', 'boring']; */
+
+.wicked {
+ width: 70px;
+ position:absolute;
+ animation: wickedFlip 2s infinite;
+}
+
+@keyframes wickedFlip {
+  0% {height: 70px;}
+  50% {height: 220px;}
+  100% {height: 70px;}
+}
+
+.weird {
+  width: 70px;
+  position:absolute;
+  transform: rotate(0deg);
+  animation-name: weirdSpin;
+  animation: weirdSpin 2s infinite;
+}
+
+@keyframes weirdSpin {
+  0% {transform: rotate(0deg);}
+  25% {transform: rotate(90deg);}
+  50% {transform: rotate(180deg);}
+  75% {transform: rotate(270deg);}
+  100% {transform: rotate(360deg);}
 }
