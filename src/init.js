@@ -38,6 +38,10 @@ $(document).ready(function() {
 
   });
 
+  window.lineUpFunction = function(dancer) {
+    dancer['$node'][0].style.top = '50%';
+  };
+
   $('.lineUp').click(function() {
     for (var i = 0; i < window.dancers.length; i++) {
       window.dancers[i]['$node'][0].style.top = '50%';
