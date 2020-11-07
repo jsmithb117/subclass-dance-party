@@ -12,7 +12,7 @@ $(document).ready(function() {
       Math.random() * 1000
     );
 
-    dancer.distances ={};
+    dancer.distances = {};
     dancer.index = window.dancers.length;
     dancer.top = dancer['$node'][0].style.top;
     dancer.left = dancer['$node'][0].style.left;
@@ -23,7 +23,7 @@ $(document).ready(function() {
       return Math.sqrt((Math.pow(a, 2)) + (Math.pow(b, 2)));
     };
 
-    for (let i = 0; i < window.dancers.length; i++ ){
+    for (let i = 0; i < window.dancers.length; i++ ) {
       var topCur = Number(dancer['$node'][0].style.top.slice(0, -2));
       var leftCur = Number(dancer['$node'][0].style.left.slice(0, -2));
       var topTo = Number(window.dancers[i]['$node'][0].style.top.slice(0, -2));
@@ -35,6 +35,7 @@ $(document).ready(function() {
 
     $('body').append(dancer.$node[0]);
     window.dancers.push(dancer);
+
   });
 
   $('.lineUp').click(function() {
@@ -50,23 +51,44 @@ $(document).ready(function() {
   });
 
   $('.pythagGroup').click(function() {
-    var classes = ['wicked', 'weird'];
+    var classes = ['wicked', 'weird', 'wild', 'cool'];
 
     for (var i = 0; i < window.dancers.length; i++) {
       var currentNode = window.dancers[i];
       var currentNodeDistances = currentNode.distances;
       var randomClass = classes[Math.floor(Math.random() * classes.length)];
       if (!currentNode.modified) {
-        currentNode['$node'][0].classList.value = randomClass;
+        currentNode['$node'][0].classList.value += ` ${randomClass}`;
       }
       for (var node in currentNodeDistances) {
         var distance = currentNodeDistances[node];
-        if (distance <= 200) {
+        if (distance <= 100) {
           if (!window.dancers[Number(node)].modified) {
-            window.dancers[Number(node)]['$node'][0].classList.value = randomClass;
+            window.dancers[Number(node)]['$node'][0].classList.value += ` ${randomClass}`;
             window.dancers[Number(node)].modified = true;
           }
         }
+      }
+    }
+  });
+
+  $('.ungroup').click(function() {
+    for (var i = 0; i < window.dancers.length; i++) {
+      var currentNode = window.dancers[i];
+
+      if (currentNode['$node'][0].classList.value.indexOf('mortydancer') !== -1) {
+        currentNode['$node'][0].classList.value = 'mortydancer';
+        currentNode.modified = false;
+      }
+
+      if (currentNode['$node'][0].classList.value.indexOf('rickdancer') !== -1) {
+        currentNode['$node'][0].classList.value = 'rickdancer';
+        currentNode.modified = false;
+      }
+
+      if (currentNode['$node'][0].classList.value.indexOf('blinkydancer') !== -1) {
+        currentNode['$node'][0].classList.value = 'blinkydancer';
+        currentNode.modified = false;
       }
     }
   });
